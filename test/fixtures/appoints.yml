@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointable: one
+  appointable_type: Appointable
+  note: MyText
+
+two:
+  appointable: two
+  appointable_type: Appointable
+  note: MyText

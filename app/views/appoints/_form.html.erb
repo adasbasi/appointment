@@ -1,0 +1,7 @@
+<%= form_with(model: [appointable, Appoint.new], local: true) do |form| %>
+    <div class="field">
+      <%= form.label :note %><br/>
+      <%= form.text_area :note %>
+    </div>
+    <%= form.submit class: "btn btn-primary" %>
+  <% end %>

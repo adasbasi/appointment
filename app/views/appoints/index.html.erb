@@ -1,0 +1,36 @@
+<% @table = { "09.00-10.00": 1,"10.00-11.00":2, "11.00-12.00":3, "13.00-14.00":4 ,"14.00-15.00":5, "15.00-16.00":6 } %>
+
+<!--
+<% @doclist = {} %>
+<% @doctors.each do |list| %>
+	<% if @doclist.keys.include?(list.first_name) %>
+		<% @doclist.values[@doclist.keys.index(list.first_name)].insert(-1,list.time) %>
+	<% else %>
+		<% @doclist[list.first_name] = list.time %>
+	<% end %>
+<% end %>
+-->
+<table>
+	<tr>
+		<td>Ad</td>
+		<td><%= @table.keys[0] %></td>
+		<td><%= @table.keys[1] %></td>
+		<td><%= @table.keys[2] %></td>
+		<td><%= @table.keys[3] %></td>
+		<td><%= @table.keys[4] %></td>
+		<td><%= @table.keys[5] %></td>
+	</tr>
+	<% @doctors.group(:first_name, :time).each_with_index do |d,i| %>
+		<tr>
+			<td><%= d.first_name %></td>
+			<% @table.values.each do |v| %>
+				<% if d.time == v %>
+					<td><strong>X</strong></td>
+				<% else %>
+						<td></td>
+				<% end %>
+			<% end %>
+		</tr>
+	<% end %>
+</table>
+

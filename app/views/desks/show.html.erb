@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @desk.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @desk.location %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @desk.time %>
+</p>
+
+<%= render partial: "appoints/appoints", locals: {appointable: @desk} %>
+<%= render partial: "appoints/form", locals: {appointable: @desk} %>
+
+<%= link_to 'Edit', edit_desk_path(@desk) %> |
+<%= link_to 'Back', desks_path %>

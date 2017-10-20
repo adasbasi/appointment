@@ -1,0 +1,8 @@
+<h3>Appoint</h3>
+<% appointable.appoints.each do |app| %>
+  <p>
+    <hr>
+    <%= app.note %>
+    <em><%= time_ago_in_words app.created_at %></em>
+  </p>
+<% end %>
